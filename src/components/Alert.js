@@ -1,4 +1,8 @@
-export const Alert = ({ alert }) => {
+import { useContext } from "react";
+import { AlertContext } from "../context/alert/alertContext";
+
+export const Alert = () => {
+  const { alert, hide } = useContext(AlertContext);
   if (!alert) {
     return null;
   }
@@ -9,7 +13,14 @@ export const Alert = ({ alert }) => {
     >
       <strong>Attention!</strong>
       {alert.text}
-      <button type="button" className="btn-close" aria-label="Close"></button>
+      <button
+        onClick={hide}
+        type="button"
+        className="btn-close"
+        aria-label="Close"
+      >
+        {/* <span aria-hidden="true">&times;</span> */}
+      </button>
     </div>
   );
 };
