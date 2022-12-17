@@ -1,14 +1,15 @@
 export const Alert = ({ alert }) => {
+  if (!alert) {
+    return null;
+  }
   return (
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div
+      className={`alert alert-${alert.type || "warning"} alert-dismissible`}
+      role="alert"
+    >
       <strong>Attention!</strong>
       {alert.text}
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-      ></button>
+      <button type="button" className="btn-close" aria-label="Close"></button>
     </div>
   );
 };
