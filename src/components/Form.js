@@ -5,7 +5,7 @@ export const Form = () => {
         <input
           className="form-control"
           type="text"
-          placeholder="Enter your note "
+          placeholder="Enter your note . . ."
         />
       </div>
     </form>

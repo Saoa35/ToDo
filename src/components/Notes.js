@@ -1,7 +1,11 @@
 export const Notes = ({ notes }) => {
   return (
-    <ul>
-      <li></li>
+    <ul className="list-group">
+      {notes.map((note) => (
+        <li className="list-group-item" key={note.id}>
+          {note.title}
+        </li>
+      ))}
     </ul>
   );
 };
