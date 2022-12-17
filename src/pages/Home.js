@@ -1,9 +1,10 @@
 import { Fragment } from "react";
+import { Form } from "../components/Form";
 
 export const Home = () => {
   return (
     <Fragment>
-      <h1>Home Page</h1>
+      <Form />
     </Fragment>
   );
 };
