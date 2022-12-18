@@ -12,7 +12,7 @@ export const Alert = () => {
       role="alert"
     >
       <strong>Attention!</strong>
-      {alert.text}
+      &nbsp;{alert.text}
       <button
         onClick={hide}
         type="button"
