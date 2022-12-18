@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { CSSTransition } from "react-transition-group";
 import { AlertContext } from "../context/alert/alertContext";
 
 export const Alert = () => {
@@ -7,20 +8,20 @@ export const Alert = () => {
     return null;
   }
   return (
-    <div
-      className={`alert alert-${alert.type || "warning"} alert-dismissible`}
-      role="alert"
-    >
-      <strong>Attention!</strong>
-      &nbsp;{alert.text}
-      <button
-        onClick={hide}
-        type="button"
-        className="btn-close"
-        aria-label="Close"
+    <CSSTransition>
+      <div
+        className={`alert alert-${alert.type || "warning"} alert-dismissible`}
+        role="alert"
       >
-        {/* <span aria-hidden="true">&times;</span> */}
-      </button>
-    </div>
+        <strong>Attention!</strong>
+        &nbsp;{alert.text}
+        <button
+          onClick={hide}
+          type="button"
+          className="btn-close"
+          aria-label="Close"
+        ></button>
+      </div>
+    </CSSTransition>
   );
 };
