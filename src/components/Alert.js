@@ -4,11 +4,15 @@ import { AlertContext } from "../context/alert/alertContext";
 
 export const Alert = () => {
   const { alert, hide } = useContext(AlertContext);
-  if (!alert.visible) {
-    return null;
-  }
+
   return (
-    <CSSTransition>
+    <CSSTransition
+      in={alert.visible}
+      timeout={750}
+      classNames={"alert"}
+      mountOnEnter
+      unmountOnExit
+    >
       <div
         className={`alert alert-${alert.type || "warning"} alert-dismissible`}
         role="alert"
