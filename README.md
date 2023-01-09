@@ -1,1 +1,1 @@
-This ToDo list, was created by using HTML, SCSS, React hooks, Firebase, ReactJS
+This ToDo list, was created by using HTML, JS, SCSS, React hooks, Firebase, ReactJS
